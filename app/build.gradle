@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 
+def DARK_SKY_API_KEY = '"'+DarkSkyApiKey+'"' ?: '"No Key Dark Sky Api"';
+
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
@@ -10,11 +12,15 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        resValue('string','DARK_SKY_API_KEY', DARK_SKY_API_KEY)
+        buildConfigField('String','DARK_SKY_API_KEY', DARK_SKY_API_KEY)
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue('string','DARK_SKY_API_KEY', DARK_SKY_API_KEY)
+            buildConfigField('String','DARK_SKY_API_KEY', DARK_SKY_API_KEY)
         }
     }
 }
@@ -27,4 +33,16 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.okhttp3:okhttp:3.8.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    compile 'pub.devrel:easypermissions:0.4.3'
+    compile 'com.airbnb.android:lottie:2.2.0'
+    compile 'com.google.android.gms:play-services-location:11.0.4'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'com.github.bumptech.glide:glide:4.0.0-RC0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC0'
+    compile 'com.android.support:recyclerview-v7:26.+'
 }

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Prueba</string>
+    <string name="no_internet">No podemos acceder a la red.\nVerifica tu conexión o vuelve a intentarlo en unos minutos.</string>
+    <string name="error_gps">Servicios de ubicación desactivados</string>
+    <string name="no_gps">Habilite los servicios de ubicación</string>
+    <string name="habilitar">HABILITAR</string>
+    <string name="errorInternet">Problemas de conexión</string>
+    <string name="location_perms">Permite que Prueba pueda acceder a la ubicación de tu dispositivo.</string>
 </resources>
